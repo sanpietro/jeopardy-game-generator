@@ -27,7 +27,7 @@ A customizable Jeopardy-style game built with React, featuring dynamic category 
 1. Clone the repository:
 ```bash
 git clone <your-repo-url>
-cd htap-jeopardy-standalone-app
+cd jeopardy-generator
 ```
 
 2. Install dependencies:
@@ -54,7 +54,14 @@ npm start
 
 The game supports easy customization of questions and categories. See the [Question Management Guide](src/data/README.md) for detailed instructions.
 
-### Quick Overview:
+### Quick Overview (Use Copilot to handle question building):
+1. Save a copy of the `src/data/questionTemplate.js`file in the directory folder 
+2. Open the file, select all and copy the code and paste in Copilot with the prompt, "Create jeopardy-style questions based on the following URLs (*type your favorite URL content here*) and format them according to the this template"
+3. Replace the file contents with your categories and questions
+4. Update the import statement in `src/JeopardyBoard.js` to use your new file
+
+
+### Quick Overview (Manually create questions):
 1. Copy `src/data/questionTemplate.js` to create your own question set
 2. Replace the placeholder text with your categories and questions
 3. Update the import in `src/JeopardyBoard.js` to use your new file
