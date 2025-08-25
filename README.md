@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# Jeopardy Game - React Edition
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A customizable Jeopardy-style game built with React, featuring dynamic category management and modular question sets.
 
-## Available Scripts
+## 🎮 Features
 
-In the project directory, you can run:
+- **Dynamic Categories**: Add/remove categories (1-6 columns) to match the TV show format
+- **Modular Questions**: Easy-to-replace question sets with validation utilities
+- **Responsive Design**: Adapts to different screen sizes and category counts
+- **Game Controls**: Reset game, reveal answers, track completed clues
+- **Educational Content**: Demo questions based on Microsoft Azure AI training materials
 
-### `npm start`
+## 🚀 Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm (comes with Node.js)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd htap-jeopardy-standalone-app
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run build`
+3. Start the development server:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Open [http://localhost:3000](http://localhost:3000) to view the game in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎯 How to Play
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Select Categories**: Use the +/- buttons to adjust the number of visible categories (1-6)
+2. **Choose a Clue**: Click on any dollar amount to reveal the question
+3. **Reveal Answer**: Click "REVEAL ANSWER" to see the correct response
+4. **Continue Playing**: Close the modal to mark the clue as completed
+5. **Reset Game**: Use the "RESET GAME" button to start over
 
-### `npm run eject`
+## 📝 Creating Custom Questions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The game supports easy customization of questions and categories. See the [Question Management Guide](src/data/README.md) for detailed instructions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Quick Overview:
+1. Copy `src/data/questionTemplate.js` to create your own question set
+2. Replace the placeholder text with your categories and questions
+3. Update the import in `src/JeopardyBoard.js` to use your new file
+4. Questions should be statements (Jeopardy-style clues)
+5. Answers should start with "What is..." or "What are..."
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── JeopardyBoard.js          # Main game component
+├── App.js                    # App wrapper
+├── data/
+│   ├── questionTemplateCV.js # Current question set (Azure AI themed)
+│   ├── questionTemplate.js   # Blank template for custom questions
+│   └── README.md            # Detailed question management guide
+└── utils/
+    └── jeopardyUtils.js     # Validation and parsing utilities
+```
 
-## Learn More
+## 🎓 Demo Content
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The included question set features 6 categories of Azure AI content based on Microsoft Learn Course AI-102T00-A: Develop AI solutions in Azure ([Course Materials](https://aka.ms/courseai-102)):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **AI Vision 101** - Basic computer vision concepts
+2. **Faces & Video** - Face detection and video analysis  
+3. **GenAI & Images** - Multimodal AI and image generation
+4. **Custom Models** - Custom Vision training and deployment
+5. **Document AI** - Document Intelligence and OCR
+6. **AI Search** - Azure AI Search and enrichment
 
-### Code Splitting
+## 🛠️ Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - **Note: this is a one-way operation!**
 
-### Analyzing the Bundle Size
+## 🎨 Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Styling
+The game uses inline styles for simplicity and to avoid CSS compilation issues. All styles are defined in `JeopardyBoard.js` and can be easily modified.
 
-### Making a Progressive Web App
+### Game Logic
+- Category management: Handled by `visibleCategories` state
+- Answer tracking: Managed by `answeredClues` Set
+- Modal system: Controls question/answer display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📋 Requirements
 
-### Advanced Configuration
+- Node.js 14+
+- Modern web browser with JavaScript enabled
+- No additional dependencies beyond those in `package.json`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contributing
 
-### Deployment
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is open source and available under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🎪 Built With
+
+- [React](https://reactjs.org/) - UI framework
+- [React Scripts](https://github.com/facebook/create-react-app) - Build toolchain
+- Vanilla CSS (inline styles) - Styling
+- JavaScript ES6+ - Game logic
+
+## 📞 Support
+
+For questions about creating custom question sets, see the [Question Management Guide](src/data/README.md).
+
+For technical issues, please open an issue in the GitHub repository.
