@@ -2,6 +2,12 @@
 
 A customizable Jeopardy-style game built with React, featuring dynamic category management and modular question sets.
 
+## 📸 Game Preview
+
+![Jeopardy Game Board](images/game-board.jpeg)
+
+*The game features a classic Jeopardy-style board with 6 customizable categories and 5 dollar values per category. Click any amount to reveal the question!*
+
 ## 🎮 Features
 
 - **Dynamic Categories**: Add/remove categories (1-6 columns) to match the TV show format
